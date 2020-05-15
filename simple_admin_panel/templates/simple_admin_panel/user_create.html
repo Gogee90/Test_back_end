@@ -1,0 +1,11 @@
+{% extends 'simple_admin_panel/base.html' %}
+
+{% block content %}
+    <form action="{% url 'user_create' %}" method="post">
+        {% csrf_token %}
+        <ul>
+            {{ registration_form.as_ul }}
+            <li><button type="submit">Создать пользователя</button></li>
+        </ul>
+    </form>
+{% endblock %}

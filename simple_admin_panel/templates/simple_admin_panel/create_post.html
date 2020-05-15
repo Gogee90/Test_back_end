@@ -1,0 +1,10 @@
+{% extends 'simple_admin_panel/base.html' %}
+
+{% block content %}
+    <form method="post" action="{% url 'create_post' %}" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.media }}
+        {{ form.as_p }}
+        <button type="submit">Опубликовать</button>
+    </form>
+{% endblock %}
